@@ -1,0 +1,25 @@
+{
+  "name": "@codeinahat/cih-tinker",
+  "version": "0.0.0",
+  "description": "Convert node script into windows services",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "pkg ."
+  },
+  "keywords": [
+    "Windows",
+    "Service"
+  ],
+  "pkg": {
+    "assets": "assets/**/*",
+    "targets": ["node16-win-x64"],
+    "output": "cih-tinker"
+  },
+  "author": "Richard Chapman Gomez",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "node-windows": "^1.0.0-beta.6"
+  }
+}
