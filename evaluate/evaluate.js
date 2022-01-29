@@ -8,16 +8,16 @@ fs.readdirSync(path.join(`${__dirname}/../assets/commands`))
     .forEach(file => commands[file] = file);
 
 
-const eval = async (commandName) => {
+const eval = async (commandName, arguments = undefined, commandsPath = undefined) => {
 
     commandName = `${commandName}.command.js`;
 
     const allowCommand = commands[commandName];
 
     if(allowCommand) {
-        const command = require(path.join(`${__dirname}/../assets/commands/${allowCommand}`));
+        const command =  require(path.join(`${__dirname}/../assets/commands/${allowCommand}`));
 
-        command.action();
+        command.action(arguments);
     }
     else {
         console.log(`${commandName.substring(0, commandName.indexOf('.'))} is not recognize`);

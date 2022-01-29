@@ -1,5 +1,5 @@
 const read = require('./read');
-const evaluate = require('./evaluate/evaluate');
+const Channel = require('./evaluate/channel.model');
 
 
 // anonymous function at begining of program
@@ -8,13 +8,12 @@ const evaluate = require('./evaluate/evaluate');
     // intiate readline interface
     const rd = new read.CIHReadline();
 
-    while(true) {
+    // initiates main channel
+    process.channel = new Channel(rd);
 
-        const command = await rd.read(`tinker >> `);
+    process.global_commands = process.channel.getCommands();
 
-        await evaluate.eval(command);
-
-    }
+    process.channel.start();
 
 })();
 

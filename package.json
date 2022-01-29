@@ -14,12 +14,15 @@
   ],
   "pkg": {
     "assets": "assets/**/*",
-    "targets": ["node16-win-x64"],
+    "targets": [
+      "node16-win-x64"
+    ],
     "output": "cih-tinker"
   },
   "author": "Richard Chapman Gomez",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
-    "node-windows": "^1.0.0-beta.6"
+    "node-windows": "^1.0.0-beta.6",
+    "rxjs": "^7.5.2"
   }
 }
